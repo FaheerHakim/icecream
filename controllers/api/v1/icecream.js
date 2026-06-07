@@ -1,5 +1,6 @@
 const Order = require('../../../models/IceCream');
 
+
 const getAll = (req, res) => {
 
     Order.find({}, (err, docs) => {
