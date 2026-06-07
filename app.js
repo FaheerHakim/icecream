@@ -8,6 +8,9 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiIcecreamRouter = require('./routes/api/v1/icecream');
 
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/icecream');
 const app = express();
 
 // view engine setup
