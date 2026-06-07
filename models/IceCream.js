@@ -12,7 +12,7 @@ const iceCreamOrderSchema = new Schema({
         required: true 
     },
     phone: { 
-        type: String, // String is beter voor telefoonnummers (i.v.m. +32 of beginnende 0)
+        type: String, 
         required: true 
     },
 
@@ -24,10 +24,10 @@ const iceCreamOrderSchema = new Schema({
     iceFlavors: [{ 
         type: String, 
         required: true
-    }], // De [ ] zorgen ervoor dat een bezoeker meerdere smaken kan kiezen (Array)
+    }], 
     
     quantity: { 
-        type: Number, // Bijvoorbeeld: 1, 2, 3 hoorntjes
+        type: Number, 
         required: true,
         default: 1 
     },
