@@ -22,7 +22,7 @@ const getOne = (req, res) => {
         res.json({
         "status": "success",
         "data": {
-            "icecream": result
+            "oneIcecream": result
 
         }
     })
