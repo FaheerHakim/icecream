@@ -35,7 +35,6 @@ const iceCreamOrderSchema = new Schema({
     // Status & Notities
     status: { 
         type: String, 
-        enum: ['te verwerken', 'verzonden', 'geannuleerd'], 
         default: 'te verwerken' // Nieuwe bestellingen staan automatisch op 'te verwerken'
     },
     notes: { 

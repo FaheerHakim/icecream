@@ -36,15 +36,25 @@ const getOne = (req, res) => {
 }
 
 const update =(req, res) => {
-    res.json({
     
-        "status": "success",
-        "data": {
+    Order.findByIdAndUpdate(req.params.id, {
+        status: req.body.status,
+        completed: req.body.completed
+    })
+    .then((result) => {
+            res.json({
+                "status": "success",
+                "data": {
+                    "oneIcecream": result
+                }
+            })
+        }).catch((err) => {
+            res.json({
+                "status": "error"
+            })
+        });
 
-        }
-
-        
-    });
+    
 }
 const create = (req, res, next) => {
 
