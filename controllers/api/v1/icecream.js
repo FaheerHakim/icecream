@@ -8,7 +8,7 @@ const getAll = (req, res) => {
 res.json({
         "status": "success",
         "data": {
-            "content": docs
+            "icecream": docs
         }
     });
         }
@@ -18,11 +18,20 @@ res.json({
 };
 
 const getOne = (req, res) => {
-    res.json({
+    Order.findById(req.params.id).then((result) => {
+        res.json({
         "status": "success",
         "data": {
+            "icecream": result
 
         }
+    })
+
+    }).catch((err) => {
+        res.json({
+        "status": "error",
+
+        })
     });
 }
 
@@ -38,7 +47,7 @@ const update =(req, res) => {
     });
 }
 const create = (req, res, next) => {
-    
+
     let order = new Order();
        order.name = req.body.name;
        order.email = req.body.email;
@@ -60,7 +69,7 @@ const create = (req, res, next) => {
         if(!err){
             res.json({
                 "status": "success",
-                "data": {"content": docs
+                "data": {"icecream": docs
 
                 }
             });
