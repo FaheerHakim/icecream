@@ -9,10 +9,12 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiIcecreamRouter = require('./routes/api/v1/icecream');
 
+//const apiUserRouter = require('./routes/api/v1/user');
+
 
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1:27017/icecream');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/icecream')
 const app = express();
 
 app.use(cors());
@@ -30,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/icecream', apiIcecreamRouter);
+//app.use('/api/v1/user', apiUserRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

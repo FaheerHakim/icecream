@@ -36,7 +36,7 @@ const getOne = (req, res) => {
 }
 
 const update =(req, res) => {
-    
+
     Order.findByIdAndUpdate(req.params.id, {
         status: req.body.status,
         completed: req.body.completed
